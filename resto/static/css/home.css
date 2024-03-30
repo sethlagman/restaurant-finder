@@ -3,3 +3,38 @@ body {
     margin: 0;
     box-sizing: border-box;
 }
+
+nav {
+    height: 10vh;
+    background-color: gainsboro;
+}
+
+h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 60px;
+    text-align: center;
+}
+
+.container-1 {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 100px;
+}
+
+.search-cont input,
+form {
+    padding: 0;
+    margin: 0;
+}

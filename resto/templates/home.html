@@ -9,14 +9,33 @@
 
 </head>
 <body>
-  {% block content %}
-  <h1>Restaurant Finder</h1>
+  <nav>
 
-  <form action="">
-    <input type="text" name="food_search" placeholder="places to go, ramen, taco shop">
-    <input type="text" name="place_search" placeholder="location">
-    <button>Enter</button>
-  </form>
+  </nav>
+
+  {% block content %}
+  
+  <div class="container-1">
+
+    <div class="main-content-cont">
+
+      <div class="main-label-cont">
+        <h1>Restaurant Finder</h1>
+      </div>
+      
+      <div class="search-cont">
+        <form action="">
+          <input type="text" name="food_search" placeholder="places to go, ramen, taco shop">
+          <input type="text" name="place_search" placeholder="location">
+          <button>Enter</button>
+        </form>
+      </div>
+      
+    </div>
+
+  </div>
+
   {% endblock %}
+
 </body>
 </html>
