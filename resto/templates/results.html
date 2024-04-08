@@ -2,8 +2,21 @@
 {% load static %}
 
 {% block title %}Results{% endblock %}
-<link rel="stylesheet" href="{% static 'css/results.css' %}">
+
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/results.css' %}">{% endblock %}
+
+{% block nav%}
+<div class="search-cont">
+    <form action="">
+        <input class="food-search" type="text" name="food_search" placeholder="places to go, ramen, taco shop">
+        <input class="place-search" type="text" name="place_search" placeholder="location">
+        <button>
+            <img src="{% static 'images/searchIcon.png' %}" alt="Search Icon">
+        </button>
+    </form>
+</div>
+{% endblock %}
 
 {% block content %}
-<p>THIS IS THE RESULTS PAGE</p>
+
 {% endblock %}
