@@ -4,6 +4,7 @@ import requests
 
 API_KEY = "rjoLDsiD-Irc-IxTlqN9bR9YulKh61DvKhBegR_sf45XauY2RLPHoXDSN9MJChOePAogmpE9ceaIQbbEstGP0fPF6YKlPez45mZNoWz8R5lBo_9dJyYwtZ3--TBXZXYx"
 API_URL = "https://api.yelp.com/v3/businesses/search"
+LOCATION_API_URL = "http://ipinfo.io/"
 
 class BusinessFinder:
     """Finds restaurants, malls, foods, entertainment, services, and many more"""
@@ -49,3 +50,18 @@ class BusinessFinder:
         """Finds the name of the businesses"""
 
         return [business['name'] for business in self.result['businesses']]
+    
+
+def get_location(ip_address):
+    """Retrieves the current location"""
+
+    response = requests.get(f'{LOCATION_API_URL}/{ip_address}/json').json()
+    return f"{response['city']}, {response['region']}, {response['country']}"
+
+
+def main():
+    pass
+
+
+if __name__ == '__main__':
+    main()

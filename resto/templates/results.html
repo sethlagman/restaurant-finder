@@ -7,7 +7,8 @@
 
 {% block nav%}
 <div class="search-cont">
-    <form action="">
+    <form method="POST" action="{% url 'results' %}">
+        {% csrf_token %}
         <input class="food-search" type="text" name="food_search" placeholder="places to go, ramen, taco shop">
         <input class="place-search" type="text" name="place_search" placeholder="location">
         <button>
