@@ -28,12 +28,15 @@ def results(request):
         term_query = request.POST.get('term_search', '')
         place_query = request.POST.get('place_search', '')
 
-    result = BusinessFinder(term_query, place_query)
-    queried_info = zip(result.getName(), result.getLocation(), result.getRating())
-
-    return render(request, 'results.html', {
-        'defaultLocation': defaultLocation,
-        'term_query': term_query,
-        'place_query': place_query,
-        'info': queried_info,
-    })
+    try:
+        result = BusinessFinder(term_query, place_query)
+        queried_info = zip(result.getName(), result.getLocation(), result.getRating())
+    except KeyError: # Handling error when there are no results foud or invalid input
+        return HttpResponse("Error")
+    else:
+        return render(request, 'results.html', {
+            'defaultLocation': defaultLocation,
+            'term_query': term_query,
+            'place_query': place_query,
+            'info': queried_info,
+        })

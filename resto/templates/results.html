@@ -11,8 +11,8 @@
 <div class="search-cont">
     <form method="POST" action="{% url 'results' %}">
         {% csrf_token %}
-        <input class="food-search" type="text" name="food_search" placeholder="places to go, ramen, taco shop">
-        <input class="place-search" type="text" name="place_search" value="{{ defaultLocation }}" placeholder="location">
+        <input class="food-search" type="text" name="food_search" value="{{ term_query }}"  placeholder="places to go, ramen, taco shop">
+        <input class="place-search" type="text" name="place_search" value="{% firstof term_query defaultLocation%}" placeholder="location">
         <button>
             <img src="{% static 'images/searchIcon.png' %}" alt="Search Icon">
         </button>
