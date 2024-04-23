@@ -3,14 +3,16 @@
 
 {% block title %}Results{% endblock %}
 
-{% block extra_css %}<link rel="stylesheet" href="{% static 'css/results.css' %}">{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/results.css' %}">
+{% endblock %}
 
 {% block nav%}
 <div class="search-cont">
     <form method="POST" action="{% url 'results' %}">
         {% csrf_token %}
         <input class="food-search" type="text" name="food_search" placeholder="places to go, ramen, taco shop">
-        <input class="place-search" type="text" name="place_search" placeholder="location">
+        <input class="place-search" type="text" name="place_search" value="{{ defaultLocation }}" placeholder="location">
         <button>
             <img src="{% static 'images/searchIcon.png' %}" alt="Search Icon">
         </button>
@@ -19,5 +21,12 @@
 {% endblock %}
 
 {% block content %}
-
+<p>
+    {% for a, b, c in info %}
+    {{ a }}
+    {{ b|join:", " }}
+    {{ c }}
+    <br>
+    {% endfor %}
+</p>
 {% endblock %}

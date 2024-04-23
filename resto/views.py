@@ -18,10 +18,22 @@ def home(request):
 def results(request):
     """This is the results page"""
 
+    ip = request.META.get("REMOTE_ADDR", "")
+
+    #TODO: defaultLocation = get_location(ip) ENABLE THIS IN DEPLOYMENT
+
+    defaultLocation = 'Manila'
+
     if request.method == 'POST':
-        food_query = request.POST.get('food_search', '')
+        term_query = request.POST.get('term_search', '')
         place_query = request.POST.get('place_search', '')
 
-        print(food_query, place_query)
+    result = BusinessFinder(term_query, place_query)
+    queried_info = zip(result.getName(), result.getLocation(), result.getRating())
 
-    return render(request, 'results.html')
+    return render(request, 'results.html', {
+        'defaultLocation': defaultLocation,
+        'term_query': term_query,
+        'place_query': place_query,
+        'info': queried_info,
+    })
