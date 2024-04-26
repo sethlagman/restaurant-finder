@@ -17,11 +17,12 @@ nav {
 /* CONTAINER 1 */
 
 .container1 {
-    padding-top: 50px;
+    padding: 50px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    gap: 50px;
 }
 
 .card {
