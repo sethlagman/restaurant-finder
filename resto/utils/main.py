@@ -63,7 +63,7 @@ class BusinessFinder:
     def getUrl(self):
         """Retrieves the url page of the business"""
         
-        pass
+        return [business['url'] for business in self.result['businesses']]
 
     def getImage(self):
         """Retrieves the images of the business"""

@@ -13,6 +13,12 @@
 
 {% block nav%}
 
+<div class="house-icon">
+    <a href="{% url 'home' %}">
+        <i class="bi bi-house-door"></i>
+    </a>
+</div>
+
 <div class="search-cont">
     <form method="POST" action="{% url 'results' %}">
         {% csrf_token %}
@@ -29,7 +35,7 @@
 {% block content %}
 
 <div class="container1">
-    {% for name, location, rating, image in info %}
+    {% for name, location, rating, image, url in info %}
     <div class="card" style="width: 18rem;">
         <img src="{{ image }}" class="card-img-top" alt="" onerror="this.onerror=null; this.src='{% static 'images/noImage.jpg' %}'">
         <div class="card-body">
@@ -43,7 +49,7 @@
                 {{ rating }}
             </div>
             <div>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="{{ url }}" class="btn btn-primary">More</a>
             </div>
         </div>
     </div>

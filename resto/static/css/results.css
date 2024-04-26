@@ -7,6 +7,12 @@
 
 /* NAV */
 
+.house-icon {
+    font-size: 30px;
+    left: 20px;
+    position: absolute;
+}
+
 nav {
     display: flex;
     justify-content: center;

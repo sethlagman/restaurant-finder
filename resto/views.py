@@ -30,7 +30,7 @@ def results(request):
 
     try:
         result = BusinessFinder(term_query, place_query)
-        queried_info = zip(result.getName(), result.getLocation(), result.getRating(), result.getImage())
+        queried_info = zip(result.getName(), result.getLocation(), result.getRating(), result.getImage(), result.getUrl())
     except KeyError: # Handling error when there are no results foud or invalid input
         return HttpResponse("Error")
     else:
