@@ -20,7 +20,7 @@ class BusinessFinder:
             'accept': 'application/json',
         }
 
-        self.limit = 7 # Number of results to return
+        self.limit = 5 # Number of results to return
         self.term = term # Example: food, pizza, bar, malls
         self.location = location # Location of the business
         self.attributes = attributes # hot_and_new, deals, open_to_all, wifi_free
