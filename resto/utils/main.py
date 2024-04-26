@@ -20,9 +20,9 @@ class BusinessFinder:
             'accept': 'application/json',
         }
 
-        self.limit = 5 # Number of results to return
-        self.term = term # example: food, pizza, bar, malls
-        self.location = location # location of the business
+        self.limit = 7 # Number of results to return
+        self.term = term # Example: food, pizza, bar, malls
+        self.location = location # Location of the business
         self.attributes = attributes # hot_and_new, deals, open_to_all, wifi_free
 
         self.param = {
@@ -32,8 +32,8 @@ class BusinessFinder:
             'attributes': self.attributes
         }
 
-        self.status = self.getStatus() # status code of the query
-        self.result = self.getResult() # result of the query
+        self.status = self.getStatus() # Status code of the query
+        self.result = self.getResult() # Result of the query
 
     def getStatus(self):
         """Returns status code"""
@@ -59,7 +59,17 @@ class BusinessFinder:
         """Retrieves the location of the business"""
 
         return [business['location']['display_address'][0:-1] for business in self.result['businesses']]
+    
+    def getUrl(self):
+        """Retrieves the url page of the business"""
+        
+        pass
 
+    def getImage(self):
+        """Retrieves the images of the business"""
+        
+        return [business['image_url'] for business in self.result['businesses']]
+    
 def get_location(ip_address):
     """Retrieves the current location"""
 

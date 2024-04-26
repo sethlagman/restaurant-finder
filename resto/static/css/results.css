@@ -13,3 +13,35 @@ nav {
     align-items: center;
     border-bottom: 1px solid #ccc;
 }
+
+/* CONTAINER 1 */
+
+.container1 {
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    height: 450px;
+    margin-bottom: 30px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.rating-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card img {
+    height: 190px;
+}
