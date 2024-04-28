@@ -20,6 +20,17 @@ nav {
     border-bottom: 1px solid #ccc;
 }
 
+.house-icon a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.house-icon a:hover {
+    color:#000000; 
+    text-decoration:none; 
+    cursor:pointer;  
+}
+
 /* CONTAINER 1 */
 
 .container1 {
