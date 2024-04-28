@@ -2,7 +2,9 @@
 
 import requests
 
-API_KEY = "iiWBdl8HrY0NWnXKj-K9jsGHGN60vm1jJJ_9EAdRGAA_V03ntToGWvrlQxMUMWVrjAO3aeDP6hg7EcdFv7lIiXhiY0P9QHZfVF7u0GuLCvR_BWj5QL6qWmG4uo0mZnYx"
+from decouple import config
+
+API_KEY = config('API_KEY')
 API_URL = "https://api.yelp.com/v3/businesses/search"
 LOCATION_API_URL = "http://ipinfo.io/"
 
