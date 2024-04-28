@@ -7,17 +7,29 @@
 
 /* NAV */
 
-.house-icon {
-    font-size: 30px;
-    left: 20px;
-    position: absolute;
-}
-
 nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-left: 70px;
+    padding-right: 70px;
     border-bottom: 1px solid #ccc;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.search-cont {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.house-icon {
+    font-size: 30px;
 }
 
 .house-icon a {

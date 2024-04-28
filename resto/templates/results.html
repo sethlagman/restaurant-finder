@@ -13,21 +13,23 @@
 
 {% block nav%}
 
-<div class="house-icon">
-    <a href="{% url 'home' %}">
-        <i class="bi bi-house-door"></i>
-    </a>
-</div>
-
-<div class="search-cont">
-    <form method="POST" action="{% url 'results' %}">
-        {% csrf_token %}
-        <input class="food-search" type="text" name="term_search" value="{{ term_query }}"  placeholder="places to go, ramen, taco shop">
-        <input class="place-search" type="text" name="place_search" value="{% firstof defaultLocation term_query %}" placeholder="location">
-        <button>
-            <img src="{% static 'images/searchIcon.png' %}" alt="Search Icon">
-        </button>
-    </form>
+<div class="nav-container">
+    <div class="house-icon">
+        <a href="{% url 'home' %}">
+            <i class="bi bi-house-door"></i>
+        </a>
+    </div>
+    
+    <div class="search-cont">
+        <form method="POST" action="{% url 'results' %}">
+            {% csrf_token %}
+            <input class="food-search" type="text" name="term_search" value="{{ term_query }}"  placeholder="places to go, ramen, taco shop">
+            <input class="place-search" type="text" name="place_search" value="{% firstof defaultLocation term_query %}" placeholder="location">
+            <button>
+                <img src="{% static 'images/searchIcon.png' %}" alt="Search Icon">
+            </button>
+        </form>
+    </div>
 </div>
 
 {% endblock %}
