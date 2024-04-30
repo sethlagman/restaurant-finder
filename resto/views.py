@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse
-from .utils.main import BusinessFinder
+from .utils.main import BusinessFinder, get_location
 
 # Create your views here.
 def home(request):
@@ -7,9 +7,9 @@ def home(request):
 
     ip = request.META.get("REMOTE_ADDR", "")
 
-    #TODO: defaultLocation = get_location(ip) ENABLE THIS IN DEPLOYMENT
+    defaultLocation = get_location(ip)
     
-    defaultLocation = 'Manila'
+    #* defaultLocation = 'Japan'
 
     return render(request, 'home.html', {
         'defaultLocation': defaultLocation,
@@ -20,9 +20,9 @@ def results(request):
 
     ip = request.META.get("REMOTE_ADDR", "")
 
-    #TODO: defaultLocation = get_location(ip) ENABLE THIS IN DEPLOYMENT
+    defaultLocation = get_location(ip)
 
-    defaultLocation = 'Manila'
+    #* defaultLocation = 'Japan'
 
     if request.method == 'POST':
         term_query = request.POST.get('term_search', '')
