@@ -7,7 +7,7 @@ def home(request):
 
     ip = request.META.get("REMOTE_ADDR", "")
 
-    defaultLocation = get_location(ip)
+    # defaultLocation = get_location(ip)
     
     defaultLocation = 'Japan'
 
