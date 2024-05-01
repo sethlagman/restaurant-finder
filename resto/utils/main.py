@@ -78,7 +78,7 @@ def get_location(ip_address):
     """Retrieves the current location"""
 
     response = requests.get(f'{LOCATION_API_URL}/{ip_address}/json').json()
-    return f"{response['city']}, {response['region']}, {response['country']}"
+    return f"{response['city']}, {response['region']}"
 
 
 def digitalOcean_ip(request):

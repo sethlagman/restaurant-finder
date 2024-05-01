@@ -6,12 +6,9 @@ def home(request):
     """This is the home page"""
 
     ip = digitalOcean_ip(request)
-
-    print(ip)
-
-    # defaultLocation = get_location(ip)
+    defaultLocation = get_location(ip)
     
-    defaultLocation = 'Japan'
+    #* defaultLocation = 'Japan'
 
     return render(request, 'home.html', {
         'defaultLocation': defaultLocation,
@@ -21,12 +18,9 @@ def results(request):
     """This is the results page"""
 
     ip = digitalOcean_ip(request)
+    defaultLocation = get_location(ip)
 
-    print(ip)
-
-    # defaultLocation = get_location(ip)
-
-    defaultLocation = 'Japan'
+    #* defaultLocation = 'Japan'
 
     if request.method == 'POST':
         term_query = request.POST.get('term_search', '')
