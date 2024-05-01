@@ -5,7 +5,7 @@ import os
 
 from decouple import config
 
-API_KEY = os.getenv('API_KEY')
+API_KEY = config('API_KEY')
 API_URL = "https://api.yelp.com/v3/businesses/search"
 LOCATION_API_URL = "http://ipinfo.io/"
 
