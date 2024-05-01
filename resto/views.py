@@ -1,11 +1,11 @@
 from django.shortcuts import render, HttpResponse
-from .utils.main import BusinessFinder, get_location
+from .utils.main import BusinessFinder, get_location, digitalOcean_ip
 
 # Create your views here.
 def home(request):
     """This is the home page"""
 
-    ip = request.META.get("REMOTE_ADDR", "")
+    ip = digitalOcean_ip(request)
 
     print(ip)
 
@@ -20,7 +20,7 @@ def home(request):
 def results(request):
     """This is the results page"""
 
-    ip = request.META.get("REMOTE_ADDR", "")
+    ip = digitalOcean_ip(request)
 
     print(ip)
 

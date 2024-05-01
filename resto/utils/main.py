@@ -72,12 +72,20 @@ class BusinessFinder:
         """Retrieves the images of the business"""
         
         return [business['image_url'] for business in self.result['businesses']]
-    
+
+
 def get_location(ip_address):
     """Retrieves the current location"""
 
     response = requests.get(f'{LOCATION_API_URL}/{ip_address}/json').json()
     return f"{response['city']}, {response['region']}, {response['country']}"
+
+
+def digitalOcean_ip(request):
+    """Retrieves the ip of the user (DigitalOcean Use)"""
+
+    user_ip = request.headers.get('do-connecting-ip')
+    return user_ip
 
 
 def main():
