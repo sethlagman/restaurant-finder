@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Kalnia", serif;
+}
+
+/* NAV */
+
+nav {
+    height: 10vh;
+}
+
+/* CONTAINER 1 */
+
+h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 100px;
+    text-align: center;
+    font-family: "Kalnia", serif;
+    margin-bottom: 10px;
+}
+
+.container-1 {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 100px;
+}
+
+.search-cont input,
+form {
+    padding: 0;
+    margin: 0;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+}
+
+button {
+    height: 50px;
+    width: 30px;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button img {
+    width: 60px;
+}
+
+.food-search {
+    width: 300px;
+    height: 50px;
+}
+
+.place-search {
+    width: 150px;
+    height: 50px;
+}
+
+input[type=text] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 15px;
+}
