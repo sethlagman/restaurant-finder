@@ -7,6 +7,8 @@ def home(request):
 
     ip = request.META.get("REMOTE_ADDR", "")
 
+    print(ip)
+
     # defaultLocation = get_location(ip)
     
     defaultLocation = 'Japan'
@@ -19,6 +21,8 @@ def results(request):
     """This is the results page"""
 
     ip = request.META.get("REMOTE_ADDR", "")
+
+    print(ip)
 
     # defaultLocation = get_location(ip)
 
