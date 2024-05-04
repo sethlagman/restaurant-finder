@@ -11,7 +11,7 @@
 
 {% endblock %}
 
-{% block nav%}
+{% block nav %}
 
 <div class="nav-container">
     <div class="house-icon">
@@ -36,6 +36,12 @@
 
 {% block content %}
 
+{% if noInfo %}
+
+<h1 class="noresult">No Results</h1>
+
+{% else %}
+
 <div class="container1">
     {% for name, location, rating, image, url in info %}
     <div class="card" style="width: 18rem;">
@@ -57,5 +63,7 @@
     </div>
     {% endfor %}
 </div>
+
+{% endif %}
 
 {% endblock %}

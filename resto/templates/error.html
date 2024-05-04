@@ -1,0 +1,16 @@
+{% extends "home.html" %}
+{% load static %}
+
+{% block title %}Error{% endblock %}
+
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'css/error.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<h1 class="error">{{ error }}</h1>
+
+{% endblock %}

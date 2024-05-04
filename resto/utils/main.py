@@ -72,6 +72,11 @@ class BusinessFinder:
         """Retrieves the images of the business"""
         
         return [business['image_url'] for business in self.result['businesses']]
+    
+    def getError(self):
+        """Retrieves the error description"""
+
+        return f"Error: {self.result['error']['code']}\nDescription: {self.result['error']['description']}"
 
 
 def get_location(ip_address):
