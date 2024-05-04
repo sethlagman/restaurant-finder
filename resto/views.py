@@ -5,9 +5,9 @@ from .utils.main import BusinessFinder, get_location, digitalOcean_ip
 def home(request):
     """This is the home page"""
 
-    #defaultLocation = get_location(digitalOcean_ip(request))
+    defaultLocation = get_location(digitalOcean_ip(request))
     
-    defaultLocation = 'Japan'
+    #defaultLocation = 'Japan'
 
     return render(request, 'home.html', {
         'defaultLocation': defaultLocation,
@@ -16,9 +16,9 @@ def home(request):
 def results(request):
     """This is the results page"""
     
-    #defaultLocation = get_location(digitalOcean_ip(request))
+    defaultLocation = get_location(digitalOcean_ip(request))
 
-    defaultLocation = 'Japan'
+    #defaultLocation = 'Japan'
 
     if request.method == 'POST':
         term_query = request.POST.get('term_search', '')
