@@ -5,8 +5,7 @@ from .utils.main import BusinessFinder, get_location, digitalOcean_ip
 def home(request):
     """This is the home page"""
 
-    ip = digitalOcean_ip(request)
-    defaultLocation = get_location(ip)
+    defaultLocation = get_location(digitalOcean_ip(request))
     
     #* defaultLocation = 'Japan'
 
@@ -16,9 +15,8 @@ def home(request):
 
 def results(request):
     """This is the results page"""
-
-    ip = digitalOcean_ip(request)
-    defaultLocation = get_location(ip)
+    
+    defaultLocation = get_location(digitalOcean_ip(request))
 
     #* defaultLocation = 'Japan'
 
@@ -26,8 +24,10 @@ def results(request):
         term_query = request.POST.get('term_search', '')
         place_query = request.POST.get('place_search', '')
 
+    place = place_query if place_query else defaultLocation
+
     try:
-        result = BusinessFinder(term_query, place_query)
+        result = BusinessFinder(term_query, place)
         queried_info = zip(result.getName(), result.getLocation(), result.getRating(), result.getImage(), result.getUrl())
     except KeyError: # Handling error when there are no results foud or invalid input
         return HttpResponse("Error")
